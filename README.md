@@ -1,30 +1,21 @@
-# To design and develop Data Acquisition, Pre-processing, and Data Analysis Pipeline
-This pipeline aims to fetch information about programming language popularity on GitHub, preprocess the acquired data, load it into an SQLite database, and perform data analysis to answer questions of interest.
-The pipeline is implemented using Python.
+# This Python-based pipeline is designed to fetch information about programming language popularity on GitHub, preprocess the acquired data, load it into an SQLite database, and perform data analysis to answer questions of interest. The pipeline utilizes GitHub's REST API to access repository data and leverages popular libraries such as Requests, Pandas, Matplotlib, and SQLite to execute various data processing tasks.
 
-## Repository Link
-
-Repository: https://github.com/satishreddyseelam/Ca2-Data-pipeline
+Requirements
 
 ## Requirements
 - Python 3.x
-- Requests library (for making HTTP requests)
-- Pandas library (for data manipulation)
-- Matplotlib library (for data visualization)
-- SQLite (for data storage)
+- Requests library 
+- Pandas library 
+- Matplotlib library 
+- SQLite 
 
 ## Pipeline Steps
 
 ### 1. Data Acquisition
 
-In the data acquisition step, we fetch repository information from GitHub using the GitHub REST API. 
+In the data acquisition the first step is fetch repository information from GitHub using the GitHub REST API. 
 We make HTTP requests to the API endpoints to retrieve the required data. To access the GitHub API, you need to generate a personal access token from GitHub. 
 
-The GitHub API endpoint we use is:
-https://api.github.com/search/repositories?q=stars:>0&per_page=100
-
-- `q=stars:>0` specifies that we want to fetch repositories with at least one star.
-- `per_page=100` indicates that we want to retrieve 100 repositories per page.
 
 ### 2. Data Pre-processing
 
@@ -40,12 +31,9 @@ We create a table called "repositories" in the database with columns for the rep
 ### 4. Data Analysis
 
 In the data analysis step, we utilize the preprocessed and loaded data to answer questions of interest. In this example, we answer the following questions:
-- Which programming languages are most popular on GitHub?
-- How many repositories exist for each language?
-- What is the distribution of star counts across different languages?
-
-We use the Pandas library to execute SQL queries on the SQLite database and retrieve the necessary data for analysis. 
-Matplotlib is used to create bar charts and box plots to visualize the analysis results.
+-  what are most commnly used languages used in github
+- what number of repositories does a language have
+- distribution of star counts of languages
 
 ## Usage
 
@@ -66,4 +54,5 @@ The script will execute the pipeline steps and provide the analysis results in t
 This pipeline demonstrates a basic workflow for data acquisition, pre-processing, and data analysis using Python. 
 By extending and customizing the pipeline, one can apply it to different data sources and answer various questions of interest.
 
-
+Repository Link
+Repository: https://github.com/satishreddyseelam/Ca2-Data-pipeline
